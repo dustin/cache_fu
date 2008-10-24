@@ -29,6 +29,11 @@ context "The global cache configuration" do
     ActsAsCached.config[:namespace].should.equal "app-#{RAILS_ENV}"
   end
 
+  specify "should construct a namespace with env_override" do
+    setup_config :env_override => "env1"
+    ActsAsCached.config[:namespace].should.equal "app-env1"
+  end
+
   specify "should be able to set a global default ttl" do
     setup_config
     Story.send :acts_as_cached

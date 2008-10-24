@@ -41,7 +41,11 @@ module ActsAsCached
     end
 
     def setup_memcache(config)
-      config[:namespace] << "-#{RAILS_ENV}"
+      if(config[:env_override])
+        config[:namespace] << "-#{config[:env_override]}"
+      else
+        config[:namespace] << "-#{RAILS_ENV}"
+      end
 
       silence_warnings do
         Object.const_set :CACHE, memcache_client(config)
