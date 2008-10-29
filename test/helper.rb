@@ -8,11 +8,11 @@ begin
   require 'rubygems'
   gem 'mocha', '>= 0.4.0'
   require 'mocha'
-  gem 'test-spec', '= 0.3.0'
+  gem 'test-spec', '= 0.4.0'
   require 'test/spec'
   require 'multi_rails_init'
 rescue LoadError
-  puts '=> acts_as_cached tests depend on the following gems: mocha (0.4.0+), test-spec (0.3.0), multi_rails (0.0.2), and rails.'
+  puts '=> acts_as_cached tests depend on the following gems: mocha (0.4.0+), test-spec (0.4.0), multi_rails (0.0.2), and rails.'
 end
 
 begin
